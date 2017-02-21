@@ -97,39 +97,45 @@ repository.
 Suppose you modified two files, namely “sort.c” and “search.c” and you want
 two different commits for each operation. You can add one file in the staging
 GIT
+
+
 4
 area and do commit. After the first commit, repeat the same procedure for
 another file.
+
 # First commit
 [bash]$ git add sort.c
+
 # adds file to the staging area
 [bash]$ git commit –m “Added sort operation”
+
 # Second commit
 [bash]$ git add search.c
+
 # adds file to the staging area
 [bash]$ git commit –m “Added search operation”
 Blobs
-Blob stands for Binary Large Object. Each version of a file is represented by
-blob. A blob holds the file data but doesn’t contain any metadata about the file.
-It is a binary file and in Git database, it is named as SHA1 hash of that file. In
-Git, files are not addressed by names. Everything is content-addressed.
+Blob stands for Binary Large Object. Each version of a file is represented byblob. A blob holds the file data but doesn’t contain any metadata about the file.
+
+It is a binary file and in Git database, it is named as SHA1 hash of that file. InGit, files are not addressed by names. Everything is content-addressed.
+
 Trees
-Tree is an object, which represents a directory. It holds blobs as well as other
-sub-directories. A tree is a binary file that stores references to blobs and trees
-which are also named as SHA1 hash of the tree object.
+Tree is an object, which represents a directory. It holds blobs as well as othersub-directories. A tree is a binary file that stores references to blobs and trees which are also named as SHA1 hash of the tree object.
+
 Commits
-Commit holds the current state of the repository. A commit is also named
-by SHA1 hash. You can consider a commit object as a node of the linked list.
-Every commit object has a pointer to the parent commit object. From a given
-commit, you can traverse back by looking at the parent pointer to view the
-history of the commit. If a commit has multiple parent commits, then that
+Commit holds the current state of the repository. A commit is also namedby SHA1 hash. You can consider a commit object as a node of the linked list.
+
+Every commit object has a pointer to the parent commit object. From a given commit, you can traverse back by looking at the parent pointer to view the history of the commit. If a commit has multiple parent commits, then that
 particular commit has been created by merging two branches.
+
 Branches
 Branches are used to create another line of development. By default, Git has a
 master branch, which is same as trunk in Subversion. Usually, a branch is
 created to work on a new feature. Once the feature is completed, it is merged
 back with the master branch and we delete the branch. Every branch is
 GIT
+
+
 5
 referenced by HEAD, which points to the latest commit in the branch. Whenever
 you make a commit, HEAD is updated with the latest commit.
@@ -162,10 +168,12 @@ master
 [CentOS]$ cat .git/refs/heads/master
 570837e7d58fa4bccd86cb575d884502188b0c49
 GIT
+
+
 6
 Revision
-Revision represents the version of the source code. Revisions in Git are
-represented by commits. These commits are identified by SHA1 secure hashes.
+Revision represents the version of the source code. Revisions in Git are represented by commits. These commits are identified by SHA1 secure hashes.
+
 URL
 URL represents the location of the Git repository. Git URL is stored in config file.
 [tom@CentOS tom_repo]$ pwd
